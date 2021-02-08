@@ -19,7 +19,7 @@ namespace FRP_Calculator_V0._0
         }
         private void initializeBeam()
         {
-
+            //TODO
         }
         private void initializeColumn()
         {
@@ -31,7 +31,7 @@ namespace FRP_Calculator_V0._0
         }
         private void updateForm()
         {
-
+            //TODO
         }
         private void checkBeamButton_Click(object sender, EventArgs e)
         {
