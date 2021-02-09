@@ -28,7 +28,7 @@ namespace FRP_Calculator_V0._0
             }
         }
         //Constructor
-        public Beam(int Fc, int BeamWidth,int BeamHeight, int ClearCover,int BendingReinf, int ShearReinf, int StirrupSpacing)
+        public Beam(int Fc, int BeamWidth,int BeamHeight, int ClearCover,double BendingReinf, double ShearReinf, int StirrupSpacing)
         {
             this.Fc = Fc;
             this.BeamWidth = BeamWidth;
@@ -53,7 +53,8 @@ namespace FRP_Calculator_V0._0
         {
             get
             {
-                return this.BeamHeight - this.BeamWidth;
+                
+                return this.BeamHeight - this.ClearCover;
             }
         }
         private double BendingSteelQuantity
@@ -112,6 +113,7 @@ namespace FRP_Calculator_V0._0
         {
             get
             {
+                Console.WriteLine(TensileStressRatio.ToString(), this.ReinforcementIndex);
                 return TensileStressRatio * ReinforcementIndex;
             }
         }
@@ -197,6 +199,7 @@ namespace FRP_Calculator_V0._0
         }
         public void BeamBendingCalculations()
         {
+            Console.WriteLine(this.EffectiveDepth);
             NominalMoment = Phi_bending * (this.Fc * this.BeamWidth * this.EffectiveDepth * this.FRPReinforcementFinalRatio *
                 Math.Pow(this.MomentLeveltoReinforcementRatio, 2) / 12);
         }

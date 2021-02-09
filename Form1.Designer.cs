@@ -50,26 +50,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.shearForceInput = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.bendingMomentInput = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.inputStirrupSpacing = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.inputShearReinf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.inputBendingReinf = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.inputClearCover = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.inputBeamHeight = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.inputBeamWidth = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputConcreteStrength = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -111,26 +111,26 @@
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.textBox10);
+            this.tabPage1.Controls.Add(this.shearForceInput);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.bendingMomentInput);
             this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.textBox8);
+            this.tabPage1.Controls.Add(this.inputStirrupSpacing);
             this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.textBox7);
+            this.tabPage1.Controls.Add(this.inputShearReinf);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.inputBendingReinf);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.inputClearCover);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.inputBeamHeight);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.inputBeamWidth);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.inputConcreteStrength);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -319,12 +319,12 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox10
+            // shearForceInput
             // 
-            this.textBox10.Location = new System.Drawing.Point(240, 341);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 23;
+            this.shearForceInput.Location = new System.Drawing.Point(240, 341);
+            this.shearForceInput.Name = "shearForceInput";
+            this.shearForceInput.Size = new System.Drawing.Size(100, 22);
+            this.shearForceInput.TabIndex = 23;
             // 
             // label14
             // 
@@ -344,12 +344,12 @@
             this.label13.TabIndex = 21;
             this.label13.Text = "Ult. Bending Moment (k-ft)";
             // 
-            // textBox9
+            // bendingMomentInput
             // 
-            this.textBox9.Location = new System.Drawing.Point(240, 288);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 20;
+            this.bendingMomentInput.Location = new System.Drawing.Point(240, 288);
+            this.bendingMomentInput.Name = "bendingMomentInput";
+            this.bendingMomentInput.Size = new System.Drawing.Size(100, 22);
+            this.bendingMomentInput.TabIndex = 20;
             // 
             // label12
             // 
@@ -360,12 +360,12 @@
             this.label12.TabIndex = 19;
             this.label12.Text = "LOADS";
             // 
-            // textBox8
+            // inputStirrupSpacing
             // 
-            this.textBox8.Location = new System.Drawing.Point(240, 197);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 18;
+            this.inputStirrupSpacing.Location = new System.Drawing.Point(240, 197);
+            this.inputStirrupSpacing.Name = "inputStirrupSpacing";
+            this.inputStirrupSpacing.Size = new System.Drawing.Size(100, 22);
+            this.inputStirrupSpacing.TabIndex = 18;
             // 
             // label11
             // 
@@ -376,12 +376,12 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "Stirrup Spacing(in)";
             // 
-            // textBox7
+            // inputShearReinf
             // 
-            this.textBox7.Location = new System.Drawing.Point(240, 127);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 16;
+            this.inputShearReinf.Location = new System.Drawing.Point(240, 127);
+            this.inputShearReinf.Name = "inputShearReinf";
+            this.inputShearReinf.Size = new System.Drawing.Size(100, 22);
+            this.inputShearReinf.TabIndex = 16;
             // 
             // label10
             // 
@@ -392,12 +392,12 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "Shear Reinf. (in2)";
             // 
-            // textBox6
+            // inputBendingReinf
             // 
-            this.textBox6.Location = new System.Drawing.Point(240, 66);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 14;
+            this.inputBendingReinf.Location = new System.Drawing.Point(240, 66);
+            this.inputBendingReinf.Name = "inputBendingReinf";
+            this.inputBendingReinf.Size = new System.Drawing.Size(100, 22);
+            this.inputBendingReinf.TabIndex = 14;
             // 
             // label9
             // 
@@ -417,12 +417,12 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "REINFORCEMENT";
             // 
-            // textBox5
+            // inputClearCover
             // 
-            this.textBox5.Location = new System.Drawing.Point(48, 341);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 11;
+            this.inputClearCover.Location = new System.Drawing.Point(48, 341);
+            this.inputClearCover.Name = "inputClearCover";
+            this.inputClearCover.Size = new System.Drawing.Size(100, 22);
+            this.inputClearCover.TabIndex = 11;
             // 
             // label7
             // 
@@ -433,12 +433,12 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Clear Cover(in)";
             // 
-            // textBox4
+            // inputBeamHeight
             // 
-            this.textBox4.Location = new System.Drawing.Point(48, 288);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 9;
+            this.inputBeamHeight.Location = new System.Drawing.Point(48, 288);
+            this.inputBeamHeight.Name = "inputBeamHeight";
+            this.inputBeamHeight.Size = new System.Drawing.Size(100, 22);
+            this.inputBeamHeight.TabIndex = 9;
             // 
             // label6
             // 
@@ -449,12 +449,12 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Beam Height (in)";
             // 
-            // textBox3
+            // inputBeamWidth
             // 
-            this.textBox3.Location = new System.Drawing.Point(48, 237);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 7;
+            this.inputBeamWidth.Location = new System.Drawing.Point(48, 237);
+            this.inputBeamWidth.Name = "inputBeamWidth";
+            this.inputBeamWidth.Size = new System.Drawing.Size(100, 22);
+            this.inputBeamWidth.TabIndex = 7;
             // 
             // label5
             // 
@@ -474,12 +474,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "ELEMENT GEOMETRY ";
             // 
-            // textBox1
+            // inputConcreteStrength
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.inputConcreteStrength.Location = new System.Drawing.Point(48, 66);
+            this.inputConcreteStrength.Name = "inputConcreteStrength";
+            this.inputConcreteStrength.Size = new System.Drawing.Size(100, 22);
+            this.inputConcreteStrength.TabIndex = 2;
             // 
             // label2
             // 
@@ -532,26 +532,26 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox shearForceInput;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox bendingMomentInput;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox inputStirrupSpacing;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox inputShearReinf;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox inputBendingReinf;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox inputClearCover;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox inputBeamHeight;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox inputBeamWidth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputConcreteStrength;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
