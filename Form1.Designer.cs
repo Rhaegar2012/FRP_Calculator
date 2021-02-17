@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.modeTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.beamStirrupResults = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.shearMomentRatio = new System.Windows.Forms.Label();
+            this.shearRatio = new System.Windows.Forms.Label();
             this.beamMomentRatio = new System.Windows.Forms.Label();
             this.bottomReinfResult = new System.Windows.Forms.Label();
             this.BOTTOM = new System.Windows.Forms.Label();
@@ -46,7 +49,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.generateBeamReport = new System.Windows.Forms.Button();
             this.checkBeamButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rebarComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -86,14 +89,16 @@
             this.modeTab.Location = new System.Drawing.Point(2, -2);
             this.modeTab.Name = "modeTab";
             this.modeTab.SelectedIndex = 0;
-            this.modeTab.Size = new System.Drawing.Size(800, 457);
+            this.modeTab.Size = new System.Drawing.Size(892, 487);
             this.modeTab.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.beamStirrupResults);
             this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.shearMomentRatio);
+            this.tabPage1.Controls.Add(this.shearRatio);
             this.tabPage1.Controls.Add(this.beamMomentRatio);
             this.tabPage1.Controls.Add(this.bottomReinfResult);
             this.tabPage1.Controls.Add(this.BOTTOM);
@@ -107,7 +112,7 @@
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.generateBeamReport);
             this.tabPage1.Controls.Add(this.checkBeamButton);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.rebarComboBox);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
@@ -136,10 +141,29 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 428);
+            this.tabPage1.Size = new System.Drawing.Size(884, 458);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BEAM";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(553, 45);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 17);
+            this.label22.TabIndex = 45;
+            this.label22.Text = "Ratio";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(473, 45);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(62, 17);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Capacity";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // beamStirrupResults
             // 
@@ -159,19 +183,19 @@
             this.label20.TabIndex = 42;
             this.label20.Text = "STIRRUPS";
             // 
-            // shearMomentRatio
+            // shearRatio
             // 
-            this.shearMomentRatio.AutoSize = true;
-            this.shearMomentRatio.Location = new System.Drawing.Point(539, 106);
-            this.shearMomentRatio.Name = "shearMomentRatio";
-            this.shearMomentRatio.Size = new System.Drawing.Size(18, 17);
-            this.shearMomentRatio.TabIndex = 41;
-            this.shearMomentRatio.Text = "\"\"";
+            this.shearRatio.AutoSize = true;
+            this.shearRatio.Location = new System.Drawing.Point(573, 106);
+            this.shearRatio.Name = "shearRatio";
+            this.shearRatio.Size = new System.Drawing.Size(18, 17);
+            this.shearRatio.TabIndex = 41;
+            this.shearRatio.Text = "\"\"";
             // 
             // beamMomentRatio
             // 
             this.beamMomentRatio.AutoSize = true;
-            this.beamMomentRatio.Location = new System.Drawing.Point(539, 66);
+            this.beamMomentRatio.Location = new System.Drawing.Point(573, 66);
             this.beamMomentRatio.Name = "beamMomentRatio";
             this.beamMomentRatio.Size = new System.Drawing.Size(18, 17);
             this.beamMomentRatio.TabIndex = 40;
@@ -243,20 +267,20 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(422, 106);
+            this.label17.Location = new System.Drawing.Point(385, 106);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(50, 17);
+            this.label17.Size = new System.Drawing.Size(105, 34);
             this.label17.TabIndex = 32;
-            this.label17.Text = "Phi-Vn";
+            this.label17.Text = "Nominal Shear \r\nStrength";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(422, 66);
+            this.label16.Location = new System.Drawing.Point(385, 66);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 17);
+            this.label16.Size = new System.Drawing.Size(119, 34);
             this.label16.TabIndex = 31;
-            this.label16.Text = "Phi-Mn";
+            this.label16.Text = "Nominal Bending \r\nStrength";
             // 
             // label15
             // 
@@ -286,13 +310,22 @@
             this.checkBeamButton.UseVisualStyleBackColor = true;
             this.checkBeamButton.Click += new System.EventHandler(this.checkBeamButton_Click);
             // 
-            // comboBox1
+            // rebarComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(48, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 27;
+            this.rebarComboBox.FormattingEnabled = true;
+            this.rebarComboBox.Items.AddRange(new object[] {
+            "No 2",
+            "No 3",
+            "No 4",
+            "No 5",
+            "No 7",
+            "No 8",
+            "No 9",
+            "No 10"});
+            this.rebarComboBox.Location = new System.Drawing.Point(48, 127);
+            this.rebarComboBox.Name = "rebarComboBox";
+            this.rebarComboBox.Size = new System.Drawing.Size(121, 24);
+            this.rebarComboBox.TabIndex = 27;
             // 
             // label3
             // 
@@ -305,15 +338,17 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(573, 182);
+            this.pictureBox2.BackgroundImage = global::FRP_Calculator_V0._0.Properties.Resources.GCE_LOGO;
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(476, 241);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(223, 181);
+            this.pictureBox2.Size = new System.Drawing.Size(412, 221);
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(573, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(661, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 187);
             this.pictureBox1.TabIndex = 24;
@@ -504,16 +539,16 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 428);
+            this.tabPage2.Size = new System.Drawing.Size(884, 458);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 450);
+            this.ClientSize = new System.Drawing.Size(893, 484);
             this.Controls.Add(this.modeTab);
             this.Name = "Form1";
             this.Text = "FRP Calculator_V0.0";
@@ -556,10 +591,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox rebarComboBox;
         private System.Windows.Forms.Label beamStirrupResults;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label shearMomentRatio;
+        private System.Windows.Forms.Label shearRatio;
         private System.Windows.Forms.Label beamMomentRatio;
         private System.Windows.Forms.Label bottomReinfResult;
         private System.Windows.Forms.Label BOTTOM;
@@ -573,6 +608,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button generateBeamReport;
         private System.Windows.Forms.Button checkBeamButton;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }
 

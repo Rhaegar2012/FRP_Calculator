@@ -15,12 +15,13 @@ namespace FRP_Calculator_V0._0
         int ConcreteStrength;
         int BeamWidth;
         int BeamHeight;
-        int ClearCover;
+        double ClearCover;
         double BendingReinf;
         double ShearReinf;
         int StirrupSpacing;
-        int UltimateMoment;
-        int UltimateShear;
+        string RebarSize;
+        double UltimateMoment;
+        double UltimateShear;
         private TextBox[] beaminputFields;
         
     
@@ -45,11 +46,15 @@ namespace FRP_Calculator_V0._0
             ConcreteStrength = Int32.Parse(inputConcreteStrength.Text);
             BeamWidth = Int32.Parse(inputBeamWidth.Text);
             BeamHeight = Int32.Parse(inputBeamHeight.Text);
-            ClearCover = Int32.Parse(inputClearCover.Text);
+            ClearCover = double.Parse(inputClearCover.Text);
             BendingReinf = double.Parse(inputBendingReinf.Text);
             ShearReinf = double.Parse(inputShearReinf.Text);
             StirrupSpacing = Int32.Parse(inputStirrupSpacing.Text);
-            currentBeam = new Beam(ConcreteStrength, BeamWidth, BeamHeight, ClearCover, BendingReinf, ShearReinf, StirrupSpacing);
+            UltimateMoment = double.Parse(bendingMomentInput.Text);
+            UltimateShear = double.Parse(shearForceInput.Text);
+
+            RebarSize = rebarComboBox.Text;
+            currentBeam = new Beam(ConcreteStrength, BeamWidth, BeamHeight, ClearCover, BendingReinf, ShearReinf, StirrupSpacing,RebarSize,UltimateMoment,UltimateShear);
            
         }
         private void initializeColumn()
@@ -76,6 +81,8 @@ namespace FRP_Calculator_V0._0
         {
             beamMomentResult.Text = currentBeam.NominalMoment.ToString() + " kip-ft";
             beamShearResult.Text = currentBeam.NominalShear.ToString() + " kips";
+            beamMomentRatio.Text = currentBeam.BendingRatio.ToString();
+            shearRatio.Text = currentBeam.ShearRatio.ToString();
         }
 
         private void checkBeamButton_Click(object sender, EventArgs e)
@@ -88,6 +95,11 @@ namespace FRP_Calculator_V0._0
                 currentBeam.BeamShearCalculations();
                 updateForm();
             }
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
