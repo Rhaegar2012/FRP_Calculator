@@ -338,11 +338,11 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::FRP_Calculator_V0._0.Properties.Resources.GCE_LOGO;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(476, 241);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(412, 221);
+            this.pictureBox2.Size = new System.Drawing.Size(412, 233);
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
             // 
