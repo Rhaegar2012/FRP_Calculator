@@ -76,10 +76,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.inputConcreteStrengthColumn = new System.Windows.Forms.TextBox();
+            this.rebarComboBoxColumn = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.checkColumnButton = new System.Windows.Forms.Button();
+            this.generateColumnReportButton = new System.Windows.Forms.Button();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // modeTab
@@ -536,6 +557,26 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.generateColumnReportButton);
+            this.tabPage2.Controls.Add(this.checkColumnButton);
+            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.label33);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.label31);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.label28);
+            this.tabPage2.Controls.Add(this.label27);
+            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.rebarComboBoxColumn);
+            this.tabPage2.Controls.Add(this.inputConcreteStrengthColumn);
+            this.tabPage2.Controls.Add(this.label26);
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.label23);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -543,6 +584,175 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(22, 27);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(76, 17);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "MATERIAL";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(21, 58);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(154, 17);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Concrete Strength (ksi)";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(21, 121);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 17);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Rebar Dia";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(22, 186);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(156, 17);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "ELEMENT GEOMETRY";
+            // 
+            // inputConcreteStrengthColumn
+            // 
+            this.inputConcreteStrengthColumn.Location = new System.Drawing.Point(24, 86);
+            this.inputConcreteStrengthColumn.Name = "inputConcreteStrengthColumn";
+            this.inputConcreteStrengthColumn.Size = new System.Drawing.Size(121, 22);
+            this.inputConcreteStrengthColumn.TabIndex = 4;
+            // 
+            // rebarComboBoxColumn
+            // 
+            this.rebarComboBoxColumn.FormattingEnabled = true;
+            this.rebarComboBoxColumn.Location = new System.Drawing.Point(24, 142);
+            this.rebarComboBoxColumn.Name = "rebarComboBoxColumn";
+            this.rebarComboBoxColumn.Size = new System.Drawing.Size(121, 24);
+            this.rebarComboBoxColumn.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 230);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(24, 285);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 7;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(25, 207);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(95, 17);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Column Width";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(25, 265);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(97, 17);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Column Depth";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(211, 27);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(126, 17);
+            this.label29.TabIndex = 10;
+            this.label29.Text = "REINFORCEMENT";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(211, 58);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(159, 17);
+            this.label30.TabIndex = 11;
+            this.label30.Text = "Face reinforcement(in2)";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(214, 86);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 12;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(214, 121);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(165, 17);
+            this.label31.TabIndex = 13;
+            this.label31.Text = "Side Reinforcement (in2)";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(214, 143);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 14;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(214, 186);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(72, 17);
+            this.label32.TabIndex = 15;
+            this.label32.Text = "RESULTS";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(214, 230);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(110, 17);
+            this.label33.TabIndex = 16;
+            this.label33.Text = "(PhiMn)/(PhiMu)";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(340, 230);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(18, 17);
+            this.label34.TabIndex = 17;
+            this.label34.Text = "\"\"";
+            // 
+            // checkColumnButton
+            // 
+            this.checkColumnButton.Location = new System.Drawing.Point(28, 358);
+            this.checkColumnButton.Name = "checkColumnButton";
+            this.checkColumnButton.Size = new System.Drawing.Size(117, 44);
+            this.checkColumnButton.TabIndex = 18;
+            this.checkColumnButton.Text = "CHECK DESIGN";
+            this.checkColumnButton.UseVisualStyleBackColor = true;
+            // 
+            // generateColumnReportButton
+            // 
+            this.generateColumnReportButton.Location = new System.Drawing.Point(160, 358);
+            this.generateColumnReportButton.Name = "generateColumnReportButton";
+            this.generateColumnReportButton.Size = new System.Drawing.Size(117, 44);
+            this.generateColumnReportButton.TabIndex = 19;
+            this.generateColumnReportButton.Text = "GENERATE REPORT";
+            this.generateColumnReportButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -557,6 +767,8 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -610,6 +822,26 @@
         private System.Windows.Forms.Button checkBeamButton;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox rebarComboBoxColumn;
+        private System.Windows.Forms.TextBox inputConcreteStrengthColumn;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button checkColumnButton;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button generateColumnReportButton;
     }
 }
 
