@@ -227,45 +227,7 @@ namespace FRP_Calculator_V0._0
             NominalMoment =Math.Round( Phi_bending * MomentCapacity,2);
             BendingRatio = Math.Round(UltimateMoment /NominalMoment ,2);
         }
-        public double AssignFFu(string rebarSize)
-        {
-            double returnValue;
-            switch (rebarSize)
-            {
-                
-                case "No 2":
-                    
-                     return returnValue = 0.9 * (double)Fy.BarNo2;
-                    
-                case "No 3":
-                    return returnValue = 0.9 * (double)Fy.BarNo3;
-                    
-                case "No 4":
-                    return returnValue = 0.9 * (double)Fy.BarNo4;
-                    
-                case "No 5":
-                    return returnValue = 0.9 * (double)Fy.BarNo5;
-                    
-                case "No 6":
-                    return returnValue = 0.9 * (double)Fy.BarNo6;
-                    
-                case "No 7":
-                    return returnValue = 0.9 * (double)Fy.BarNo7;
-                    
-                case "No 8":
-                    return returnValue = 0.9 * (double)Fy.BarNo8;
-                    
-                case "No 9":
-                    return returnValue = 0.9 * (double)Fy.BarNo9;
-                    
-                case "No 10":
-                    return returnValue = 0.9 * (double)Fy.BarNo10;
-                default:
-                    return returnValue=0;
-                
-            }
-           
-        }
+     
         
         public void GenerateReport()
         {
