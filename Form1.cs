@@ -12,6 +12,7 @@ namespace FRP_Calculator_V0._0
 {
     public partial class Form1 : Form
     {
+        //Beam State variables 
         int ConcreteStrength;
         int BeamWidth;
         int BeamHeight;
@@ -23,6 +24,14 @@ namespace FRP_Calculator_V0._0
         double UltimateMoment;
         double UltimateShear;
         private TextBox[] beaminputFields;
+        //Column State variables 
+        double Col_ConcreteStrength;
+        string Col_RebarSize;
+        double ColumnWidth;
+        double ColumnHeight;
+        double FaceReinforcement;
+        double SideReinforcement;
+        private TextBox[] columninputFields;
         
     
         Beam currentBeam;
@@ -39,6 +48,11 @@ namespace FRP_Calculator_V0._0
                                          inputStirrupSpacing,
                                          bendingMomentInput,
                                          shearForceInput};
+            columninputFields = new TextBox[] {inputConcreteStrengthColumn,
+                                               inputColumnHeight,
+                                               inputColumnWidth,
+                                               inputColumnFaceReinforcement,
+                                               inputColumnSideReinforcement};
         }
         private void initializeBeam()
         {
@@ -76,6 +90,18 @@ namespace FRP_Calculator_V0._0
             return true;
            
         }
+        private bool checkColumnParameters()
+        {
+            for(int i=0; i < columninputFields.Length; i++)
+            {
+                if (columninputFields[i].Text == "")
+                {
+                    MessageBox.Show("Input all column parameters", "Missing data");
+                    return false;
+                }
+            }
+            return true;
+        }
         
         private void updateForm()
         {
@@ -97,9 +123,6 @@ namespace FRP_Calculator_V0._0
             }
         }
 
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
