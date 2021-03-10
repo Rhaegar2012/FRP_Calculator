@@ -8,34 +8,35 @@ namespace FRP_Calculator_V0._0
 {
     class Column:Reinforcement
     {
-        public double ColumnHeight { get; set; }
-        public double ColumnWidth { get; set; }
-        public double ClearCover { get; set;  }
-        public double EffectiveDepth { get; set; }
-        public double EffectiveDepthRatio { get; set; }
-        public double ConcreteGrossArea { get; set; }
-        public double FaceReinforcement { get; set; }
-        public double SideReinforcement { get; set; }
-        public double Ffu { get; set; }
-        public int ConcreteStrength { get; set; }
-        public double SteelQuantity { get; set; }
-        public double SteelConcreteCapacityRatio { get; set; }
-        public double ef { get; set; }
-        public double e { get; set; }
-        public double Beta_1 { get; set; }
-        public double EffectiveDepthCoverRatio { get; set; }
-        public double W1 { get; set;  }
-        public double BalancedPoint { get { return 1 / (1 / +this.e); } }
+        private double ColumnHeight { get; set; }
+        private double ColumnWidth { get; set; }
+        private double ClearCover { get; set;  }
+        private double EffectiveDepth { get { return this.ColumnHeight - this.ClearCover; } }
+        private double EffectiveDepthRatio { get { return this.EffectiveDepth / this.ColumnHeight; } }
+        private double ConcreteGrossArea { get { return this.ColumnHeight * this.ColumnWidth; } }
+        private double FaceReinforcement { get; set; }
+        private double SideReinforcement { get; set; }
+        private string rebarSize { get; set; }
+        private double Ffu { get { return AssignFFu(rebarSize); } }
+        private int ConcreteStrength { get; set; }
+        private double SteelQuantity { get { return (this.FaceReinforcement + this.SideReinforcement) / (this.ConcreteGrossArea)*100; } }
+        private double SteelConcreteCapacityRatio { get { return ((this.Ffu * this.SteelQuantity) / this.ConcreteStrength) / 100; } }
+        private double ef { get {return this.Ffu /((double) MOE.MOE); } }
+        private double e { get { return this.ef / 0.003; } }
+        private double Beta_1 { get { return Math.Min(0.85, Math.Max(1.05 - 0.05 * this.ConcreteStrength, 0.65)); } }
+        private double W1 { get; set;  }
+        private double BalancedPoint { get { return 1 / (1 / +this.e); } }
+        private double EffectiveDepthCoverRatio { get{ return this.ClearCover / this.EffectiveDepth; } }
         //Material Limit Variables 
-        public double ConcreteEffectiveStrength { get; set; }
-        public double F1 { get; set; }
-        public double F2 { get; set; }
-        public double M_c { get; set; }
-        public double M_1 { get; set; }
-        public double M_2 { get; set; }
+        private double ConcreteEffectiveStrength { get; set; }
+        private double F1 { get; set; }
+        private double F2 { get; set; }
+        private double M_c { get; set; }
+        private double M_1 { get; set; }
+        private double M_2 { get; set; }
         //Interaction Step Variables 
-        public double step_1 { get { return (1 - this.BalancedPoint) / 18; } }
-        public double step_2 { get ; set; }
+        private double step_1 { get { return (1 - this.BalancedPoint) / 18; } }
+        private double step_2 { get ; set; }
 
         //Step Collections for interaction curve
         public List<double> a = new List<double>();
@@ -58,9 +59,15 @@ namespace FRP_Calculator_V0._0
         public List<double> Phi_Pn = new List<double>();
 
         public int Ef { get; set; }
-        public Column()
+        public Column(double ColumnHeight, double ColumnWidth, double ClearCover, double FaceReinforcement, double SideReinforcement,int ConcreteStrength, string rebarSize)
         {
-            //TODO
+            this.ColumnHeight = ColumnHeight;
+            this.ColumnWidth = ColumnWidth;
+            this.ClearCover = ClearCover;
+            this.FaceReinforcement = FaceReinforcement;
+            this.SideReinforcement = SideReinforcement;
+            this.ConcreteStrength = ConcreteStrength;
+            this.rebarSize = rebarSize;
         }
  
         public void CalculateInitialParameters()
@@ -95,6 +102,13 @@ namespace FRP_Calculator_V0._0
 
             }
         }
+        public string CalculateInteractionRatio()
+        {
+            //TODO
+            double interactionRatio=0.0;
+            return interactionRatio.ToString();
+        }
+
 
 
 

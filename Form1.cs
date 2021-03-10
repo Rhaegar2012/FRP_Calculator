@@ -25,8 +25,9 @@ namespace FRP_Calculator_V0._0
         double UltimateShear;
         private TextBox[] beaminputFields;
         //Column State variables 
-        double Col_ConcreteStrength;
+        int Col_ConcreteStrength;
         string Col_RebarSize;
+        double Col_ClearCover;
         double ColumnWidth;
         double ColumnHeight;
         double FaceReinforcement;
@@ -35,6 +36,7 @@ namespace FRP_Calculator_V0._0
         
     
         Beam currentBeam;
+        Column currentColumn;
         public Form1()
         {
             InitializeComponent();
@@ -73,7 +75,15 @@ namespace FRP_Calculator_V0._0
         }
         private void initializeColumn()
         {
-            //TODO
+            Col_ConcreteStrength = Int32.Parse(inputConcreteStrengthColumn.Text);
+            ColumnWidth = double.Parse(inputColumnWidth.Text);
+            ColumnHeight = double.Parse(inputColumnHeight.Text);
+            Col_ClearCover = double.Parse(inputClearCoverColumn.Text);
+            FaceReinforcement = double.Parse(inputColumnFaceReinforcement.Text);
+            SideReinforcement = double.Parse(inputColumnSideReinforcement.Text);
+            Col_RebarSize = rebarComboBoxColumn.Text;
+            currentColumn = new Column(ColumnHeight, ColumnWidth, Col_ClearCover, FaceReinforcement, SideReinforcement, Col_ConcreteStrength,Col_RebarSize);
+
         }
         private bool checkParameters()
         {
@@ -105,10 +115,18 @@ namespace FRP_Calculator_V0._0
         
         private void updateForm()
         {
-            beamMomentResult.Text = currentBeam.NominalMoment.ToString() + " kip-ft";
-            beamShearResult.Text = currentBeam.NominalShear.ToString() + " kips";
-            beamMomentRatio.Text = currentBeam.BendingRatio.ToString();
-            shearRatio.Text = currentBeam.ShearRatio.ToString();
+            if (currentBeam != null)
+            {
+                beamMomentResult.Text = currentBeam.NominalMoment.ToString() + " kip-ft";
+                beamShearResult.Text = currentBeam.NominalShear.ToString() + " kips";
+                beamMomentRatio.Text = currentBeam.BendingRatio.ToString();
+                shearRatio.Text = currentBeam.ShearRatio.ToString();
+            }
+            if (currentColumn != null)
+            {
+                interactionResult.Text = currentColumn.CalculateInteractionRatio();
+            }
+           
         }
 
         private void checkBeamButton_Click(object sender, EventArgs e)
@@ -123,6 +141,14 @@ namespace FRP_Calculator_V0._0
             }
         }
 
-        
+        private void checkColumnButton_Click(object sender, EventArgs e)
+        {
+            if (checkColumnParameters())
+            {
+                initializeColumn();
+                currentColumn.CalculateInitialParameters();
+                currentColumn.GenerateInteractionTable();
+            }
+        }
     }
 }

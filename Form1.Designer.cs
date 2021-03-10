@@ -78,7 +78,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.generateColumnReportButton = new System.Windows.Forms.Button();
             this.checkColumnButton = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
+            this.interactionResult = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.inputColumnSideReinforcement = new System.Windows.Forms.TextBox();
@@ -96,6 +96,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.inputClearCoverColumn = new System.Windows.Forms.TextBox();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -184,7 +186,6 @@
             this.label21.Size = new System.Drawing.Size(62, 17);
             this.label21.TabIndex = 44;
             this.label21.Text = "Capacity";
-            
             // 
             // beamStirrupResults
             // 
@@ -557,9 +558,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.inputClearCoverColumn);
+            this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.generateColumnReportButton);
             this.tabPage2.Controls.Add(this.checkColumnButton);
-            this.tabPage2.Controls.Add(this.label34);
+            this.tabPage2.Controls.Add(this.interactionResult);
             this.tabPage2.Controls.Add(this.label33);
             this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.inputColumnSideReinforcement);
@@ -587,7 +590,7 @@
             // 
             // generateColumnReportButton
             // 
-            this.generateColumnReportButton.Location = new System.Drawing.Point(160, 358);
+            this.generateColumnReportButton.Location = new System.Drawing.Point(151, 395);
             this.generateColumnReportButton.Name = "generateColumnReportButton";
             this.generateColumnReportButton.Size = new System.Drawing.Size(117, 44);
             this.generateColumnReportButton.TabIndex = 19;
@@ -596,21 +599,22 @@
             // 
             // checkColumnButton
             // 
-            this.checkColumnButton.Location = new System.Drawing.Point(28, 358);
+            this.checkColumnButton.Location = new System.Drawing.Point(28, 395);
             this.checkColumnButton.Name = "checkColumnButton";
             this.checkColumnButton.Size = new System.Drawing.Size(117, 44);
             this.checkColumnButton.TabIndex = 18;
             this.checkColumnButton.Text = "CHECK DESIGN";
             this.checkColumnButton.UseVisualStyleBackColor = true;
+            this.checkColumnButton.Click += new System.EventHandler(this.checkColumnButton_Click);
             // 
-            // label34
+            // interactionResult
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(340, 230);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(18, 17);
-            this.label34.TabIndex = 17;
-            this.label34.Text = "\"\"";
+            this.interactionResult.AutoSize = true;
+            this.interactionResult.Location = new System.Drawing.Point(340, 230);
+            this.interactionResult.Name = "interactionResult";
+            this.interactionResult.Size = new System.Drawing.Size(18, 17);
+            this.interactionResult.TabIndex = 17;
+            this.interactionResult.Text = "\"\"";
             // 
             // label33
             // 
@@ -754,6 +758,22 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "MATERIAL";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(21, 323);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(82, 17);
+            this.label34.TabIndex = 20;
+            this.label34.Text = "Clear Cover";
+            // 
+            // inputClearCoverColumn
+            // 
+            this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 344);
+            this.inputClearCoverColumn.Name = "inputClearCoverColumn";
+            this.inputClearCoverColumn.Size = new System.Drawing.Size(100, 22);
+            this.inputClearCoverColumn.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -829,7 +849,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button checkColumnButton;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label interactionResult;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox inputColumnSideReinforcement;
@@ -842,6 +862,8 @@
         private System.Windows.Forms.TextBox inputColumnHeight;
         private System.Windows.Forms.TextBox inputColumnWidth;
         private System.Windows.Forms.Button generateColumnReportButton;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox inputClearCoverColumn;
     }
 }
 
