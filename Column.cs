@@ -120,6 +120,23 @@ namespace FRP_Calculator_V0._0
 
             }
         }
+        public void ColumnDebug()
+        {
+            for (int i = 0; i < a.Count; i++)
+            {
+                Console.WriteLine(a[i]+" "+
+                    kc[i]+" "+
+                    k1[i]+" "+
+                    k2[i]+" "+
+                    k_prime_c[i]+" "+
+                    k_prime_1[i]+" "+
+                    k_prime_2[i]+" "+
+                    C[i]+" "+
+                    T1[i]+" "+
+                    T2[i]+" "+
+                    )
+            }
+        }
         public string CalculateInteractionRatio()
         {
             //TODO
