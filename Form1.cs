@@ -32,6 +32,8 @@ namespace FRP_Calculator_V0._0
         double ColumnHeight;
         double FaceReinforcement;
         double SideReinforcement;
+        double ColumnUltimateMoment;
+        double ColumnUltimateShear;
         private TextBox[] columninputFields;
         
     
@@ -54,7 +56,9 @@ namespace FRP_Calculator_V0._0
                                                inputColumnHeight,
                                                inputColumnWidth,
                                                inputColumnFaceReinforcement,
-                                               inputColumnSideReinforcement};
+                                               inputColumnSideReinforcement,
+                                               ColumnUltimateMomentInput,
+                                               ColumnUltimateShearInput};
         }
         private void initializeBeam()
         {
@@ -146,7 +150,6 @@ namespace FRP_Calculator_V0._0
             if (checkColumnParameters())
             {
                 initializeColumn();
-                currentColumn.CalculateInitialParameters();
                 currentColumn.GenerateInteractionTable();
             }
         }

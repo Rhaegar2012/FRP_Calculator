@@ -76,6 +76,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.inputClearCoverColumn = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.generateColumnReportButton = new System.Windows.Forms.Button();
             this.checkColumnButton = new System.Windows.Forms.Button();
             this.interactionResult = new System.Windows.Forms.Label();
@@ -96,8 +98,11 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.inputClearCoverColumn = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.ColumnUltimateMomentInput = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.ColumnUltimateShearInput = new System.Windows.Forms.TextBox();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -558,6 +563,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ColumnUltimateShearInput);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.ColumnUltimateMomentInput);
+            this.tabPage2.Controls.Add(this.label36);
+            this.tabPage2.Controls.Add(this.label35);
             this.tabPage2.Controls.Add(this.inputClearCoverColumn);
             this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.generateColumnReportButton);
@@ -587,6 +597,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // inputClearCoverColumn
+            // 
+            this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 344);
+            this.inputClearCoverColumn.Name = "inputClearCoverColumn";
+            this.inputClearCoverColumn.Size = new System.Drawing.Size(100, 22);
+            this.inputClearCoverColumn.TabIndex = 21;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(21, 323);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(82, 17);
+            this.label34.TabIndex = 20;
+            this.label34.Text = "Clear Cover";
             // 
             // generateColumnReportButton
             // 
@@ -758,21 +784,46 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "MATERIAL";
             // 
-            // label34
+            // label35
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(21, 323);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(82, 17);
-            this.label34.TabIndex = 20;
-            this.label34.Text = "Clear Cover";
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(396, 27);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(55, 17);
+            this.label35.TabIndex = 22;
+            this.label35.Text = "LOADS";
             // 
-            // inputClearCoverColumn
+            // label36
             // 
-            this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 344);
-            this.inputClearCoverColumn.Name = "inputClearCoverColumn";
-            this.inputClearCoverColumn.Size = new System.Drawing.Size(100, 22);
-            this.inputClearCoverColumn.TabIndex = 21;
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(396, 58);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(165, 17);
+            this.label36.TabIndex = 23;
+            this.label36.Text = "Ultimate Moment (kips-ft)";
+            // 
+            // ColumnUltimateMomentInput
+            // 
+            this.ColumnUltimateMomentInput.Location = new System.Drawing.Point(399, 86);
+            this.ColumnUltimateMomentInput.Name = "ColumnUltimateMomentInput";
+            this.ColumnUltimateMomentInput.Size = new System.Drawing.Size(100, 22);
+            this.ColumnUltimateMomentInput.TabIndex = 24;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(396, 121);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(153, 17);
+            this.label37.TabIndex = 25;
+            this.label37.Text = "Ultimate Shear (kips-ft)";
+            // 
+            // ColumnUltimateShearInput
+            // 
+            this.ColumnUltimateShearInput.Location = new System.Drawing.Point(399, 144);
+            this.ColumnUltimateShearInput.Name = "ColumnUltimateShearInput";
+            this.ColumnUltimateShearInput.Size = new System.Drawing.Size(100, 22);
+            this.ColumnUltimateShearInput.TabIndex = 26;
             // 
             // Form1
             // 
@@ -864,6 +915,11 @@
         private System.Windows.Forms.Button generateColumnReportButton;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox inputClearCoverColumn;
+        private System.Windows.Forms.TextBox ColumnUltimateShearInput;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox ColumnUltimateMomentInput;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
     }
 }
 

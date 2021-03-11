@@ -28,12 +28,12 @@ namespace FRP_Calculator_V0._0
         private double BalancedPoint { get { return 1 / (1 / +this.e); } }
         private double EffectiveDepthCoverRatio { get{ return this.ClearCover / this.EffectiveDepth; } }
         //Material Limit Variables 
-        private double ConcreteEffectiveStrength { get; set; }
-        private double F1 { get; set; }
-        private double F2 { get; set; }
-        private double M_c { get; set; }
-        private double M_1 { get; set; }
-        private double M_2 { get; set; }
+        private double ConcreteEffectiveStrength { get { return this.ConcreteGrossArea * this.ConcreteStrength; } }
+        private double F1 { get { return this.FaceReinforcement * (double) MOE.MOE; } }
+        private double F2 { get { return this.SideReinforcement * (double) MOE.MOE; } }
+        private double M_c { get { return this.ConcreteEffectiveStrength * this.ColumnHeight; } }
+        private double M_1 { get { return this.F1 * this.ColumnHeight; } }
+        private double M_2 { get { return this.F2 * this.ColumnHeight; } }
         //Interaction Step Variables 
         private double step_1 { get { return (1 - this.BalancedPoint) / 18; } }
         private double step_2 { get ; set; }
@@ -70,15 +70,32 @@ namespace FRP_Calculator_V0._0
             this.rebarSize = rebarSize;
         }
  
-        public void CalculateInitialParameters()
-        {
-
-        }
+      
         public void GenerateInteractionTable()
         {
             double neutralAxisLimit = ColumnHeight / EffectiveDepth;
             int index = 1;
+            //Initial Step
             a.Add(BalancedPoint);
+            kc.Add(0);
+            k1.Add(2 * this.e * 0.003);
+            k2.Add(2 * this.e * 0.003);
+            k_prime_c.Add(0);
+            k_prime_1.Add(0);
+            k_prime_2.Add(0);
+            C.Add(kc[0] * this.ConcreteEffectiveStrength);
+            T1.Add(k1[0] * this.F1);
+            T2.Add(k2[0] * this.F2);
+            Mc.Add(k_prime_c[0] * M_c);
+            M1.Add(k_prime_1[0] * M_1);
+            M2.Add(k_prime_2[0] * M_2);
+            Mn.Add((Mc[0] + M1[0] + M2[0]) / 12);
+            Pn.Add(C[0] - T1[0] - T2[0]);
+            Phi.Add(0.55);
+            Phi_Mn.Add(Mn[0] * Phi[0]);
+            Phi_Pn.Add(Pn[0] * Phi[0]);
+
+
             while (a[index] < neutralAxisLimit)
             {
                 a.Add(a[index - 1] + step_1);
@@ -99,6 +116,7 @@ namespace FRP_Calculator_V0._0
                 Phi.Add(Math.Min(Math.Max(0.55, (0.3 + 0.25 * e * (1 + e) * Math.Pow(a[index], 2)) / (1 - a[index])), 0.65));
                 Phi_Mn.Add(Phi[index] * Mn[index]);
                 Phi_Pn.Add(Phi[index] * Mn[index]);
+                index++;
 
             }
         }
