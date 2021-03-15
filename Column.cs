@@ -25,11 +25,11 @@ namespace FRP_Calculator_V0._0
         private double e { get { return this.ef / 0.003; } }
         private double Beta_1 { get { return Math.Min(0.85, Math.Max(1.05 - 0.05 * this.ConcreteStrength, 0.65)); } }
         private double W1 { get; set;  }
-        private double BalancedPoint { get { return 1 / (1 / +this.e); } }
+        private double BalancedPoint { get { return 1 / (1+this.e); } }
         private double EffectiveDepthCoverRatio { get{ return this.ClearCover / this.EffectiveDepth; } }
         //Material Limit Variables 
         private double ConcreteEffectiveStrength { get { return this.ConcreteGrossArea * this.ConcreteStrength; } }
-        private double F1 { get { return this.FaceReinforcement * (double) MOE.MOE; } }
+        private double F1 { get { return this.FaceReinforcement * (double)MOE.MOE; } }
         private double F2 { get { return this.SideReinforcement * (double) MOE.MOE; } }
         private double M_c { get { return this.ConcreteEffectiveStrength * this.ColumnHeight; } }
         private double M_1 { get { return this.F1 * this.ColumnHeight; } }
@@ -39,24 +39,24 @@ namespace FRP_Calculator_V0._0
         private double step_2 { get ; set; }
 
         //Step Collections for interaction curve
-        public List<double> a = new List<double>();
-        public List<double> kc = new List<double>();
-        public List<double> k1 = new List<double>();
-        public List<double> k2 = new List<double>();
-        public List<double> k_prime_c = new List<double>();
-        public List<double> k_prime_1 = new List<double>();
-        public List<double> k_prime_2 = new List<double>();
-        public List<double> C = new List<double>();
-        public List<double> T1 = new List<double>();
-        public List<double> T2 = new List<double>();
-        public List<double> Mc = new List<double>();
-        public List<double> M1 = new List<double>();
-        public List<double> M2 = new List<double>();
-        public List<double> Mn = new List<double>();
-        public List<double> Pn = new List<double>();
-        public List<double> Phi = new List<double>();
-        public List<double> Phi_Mn = new List<double>();
-        public List<double> Phi_Pn = new List<double>();
+        private List<double> a = new List<double>();
+        private List<double> kc = new List<double>();
+        private List<double> k1 = new List<double>();
+        private List<double> k2 = new List<double>();
+        private List<double> k_prime_c = new List<double>();
+        private List<double> k_prime_1 = new List<double>();
+        private List<double> k_prime_2 = new List<double>();
+        private List<double> C = new List<double>();
+        private List<double> T1 = new List<double>();
+        private List<double> T2 = new List<double>();
+        private List<double> Mc = new List<double>();
+        private List<double> M1 = new List<double>();
+        private List<double> M2 = new List<double>();
+        private List<double> Mn = new List<double>();
+        private List<double> Pn = new List<double>();
+        private List<double> Phi = new List<double>();
+        private List<double> Phi_Mn = new List<double>();
+        private List<double> Phi_Pn = new List<double>();
 
         public int Ef { get; set; }
         public Column(double ColumnHeight, double ColumnWidth, double ClearCover, double FaceReinforcement, double SideReinforcement,int ConcreteStrength, string rebarSize)
@@ -74,7 +74,9 @@ namespace FRP_Calculator_V0._0
         public void GenerateInteractionTable()
         {
             double neutralAxisLimit = ColumnHeight / EffectiveDepth;
-            int index = 1;
+            Console.WriteLine("neutral axis " + neutralAxisLimit);
+            Console.WriteLine("Balance point" + this.BalancedPoint);
+            int index = 0;
             //Initial Step
             a.Add(BalancedPoint);
             kc.Add(0);
@@ -98,16 +100,16 @@ namespace FRP_Calculator_V0._0
 
             while (a[index] < neutralAxisLimit)
             {
-                a.Add(a[index - 1] + step_1);
+                a.Add(a[index] + step_1);
                 kc.Add(a[index] * Beta_1 * EffectiveDepthRatio);
-                k1.Add((1 - a[index]) / (a[index] * 0.003));
-                k2.Add(((EffectiveDepthRatio) / (2 * EffectiveDepthRatio - 1)) * Math.Pow(1 - a[index], 2) / (a[index] * 0.003));
-                k_prime_c.Add(kc[index] * (1 - a[index] * Beta_1 * EffectiveDepthRatio) / 2);
-                k_prime_1.Add(k1[index] * (EffectiveDepthRatio - 0.5));
+                k1.Add((1 - a[index]) / (a[index]) * 0.003);
+                k2.Add(this.EffectiveDepthRatio/(2*this.EffectiveDepthRatio-1)*((Math.Pow(1-a[index],2)/a[index]*0.003)));
+                k_prime_c.Add(kc[index] * (1 - a[index] * this.Beta_1 * this.EffectiveDepthRatio) / 2);
+                k_prime_1.Add(k1[index] * (this.EffectiveDepthRatio - 0.5));
                 k_prime_2.Add(k2[index] * (2 + a[index] * EffectiveDepthRatio - 0.5));
-                C.Add(kc[index] * ConcreteEffectiveStrength);
-                T1.Add(k1[index] * F1);
-                T2.Add(k2[index] * F2);
+                C.Add(kc[index] * this.ConcreteEffectiveStrength);
+                T1.Add(k1[index] * this.F1);
+                T2.Add(k2[index] *this. F2);
                 Mc.Add(k_prime_c[index] * M_c);
                 M1.Add(k_prime_1[index] * M_1);
                 M2.Add(k_prime_2[index] * M_2);
@@ -115,26 +117,39 @@ namespace FRP_Calculator_V0._0
                 Pn.Add((C[index] - T1[index] - T2[index]));
                 Phi.Add(Math.Min(Math.Max(0.55, (0.3 + 0.25 * e * (1 + e) * Math.Pow(a[index], 2)) / (1 - a[index])), 0.65));
                 Phi_Mn.Add(Phi[index] * Mn[index]);
-                Phi_Pn.Add(Phi[index] * Mn[index]);
+                Phi_Pn.Add(Phi[index] * Pn[index]);
                 index++;
 
             }
         }
         public void ColumnDebug()
         {
+            Console.WriteLine(a.Count+" Interaction Curve Size");
+            Console.WriteLine(this.Ffu+"FRP Strength");
+            Console.WriteLine(this.ConcreteEffectiveStrength + "Fc");
+            Console.WriteLine(this.F1 + "F1");
+            Console.WriteLine(this.F2 + "F2");
             for (int i = 0; i < a.Count; i++)
-            {
-                Console.WriteLine(a[i]+" "+
-                    kc[i]+" "+
-                    k1[i]+" "+
-                    k2[i]+" "+
-                    k_prime_c[i]+" "+
-                    k_prime_1[i]+" "+
-                    k_prime_2[i]+" "+
-                    C[i]+" "+
-                    T1[i]+" "+
-                    T2[i]+" "+
-                    )
+            {   
+                /*Console.WriteLine(a[i] + " " +
+                    kc[i] + "KC " +
+                    k1[i] + " K1" +
+                    k2[i] + " K2" +
+                    k_prime_c[i] + "K'C " +
+                    k_prime_1[i] + "K'1 " +
+                    k_prime_2[i] + "K'2 " +
+                    C[i] + "C "  +
+                   
+                    T1[i] + " " +
+                    T2[i] + " " +
+                    Mc[i] + " " +
+                    M1[i] + " " +
+                    M2[i] + " "
+                    );*/
+               
+                Console.WriteLine(Phi[i]+" "+
+                    Phi_Mn[i] + " " +
+                    Phi_Pn[i]);
             }
         }
         public string CalculateInteractionRatio()

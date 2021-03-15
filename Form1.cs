@@ -151,6 +151,7 @@ namespace FRP_Calculator_V0._0
             {
                 initializeColumn();
                 currentColumn.GenerateInteractionTable();
+                currentColumn.ColumnDebug();
             }
         }
     }

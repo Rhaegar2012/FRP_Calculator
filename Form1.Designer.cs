@@ -76,6 +76,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ColumnUltimateShearInput = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.ColumnUltimateMomentInput = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.inputClearCoverColumn = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.generateColumnReportButton = new System.Windows.Forms.Button();
@@ -98,11 +103,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.ColumnUltimateMomentInput = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.ColumnUltimateShearInput = new System.Windows.Forms.TextBox();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -598,6 +598,47 @@
             this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // ColumnUltimateShearInput
+            // 
+            this.ColumnUltimateShearInput.Location = new System.Drawing.Point(399, 144);
+            this.ColumnUltimateShearInput.Name = "ColumnUltimateShearInput";
+            this.ColumnUltimateShearInput.Size = new System.Drawing.Size(100, 22);
+            this.ColumnUltimateShearInput.TabIndex = 26;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(396, 121);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(153, 17);
+            this.label37.TabIndex = 25;
+            this.label37.Text = "Ultimate Shear (kips-ft)";
+            // 
+            // ColumnUltimateMomentInput
+            // 
+            this.ColumnUltimateMomentInput.Location = new System.Drawing.Point(399, 86);
+            this.ColumnUltimateMomentInput.Name = "ColumnUltimateMomentInput";
+            this.ColumnUltimateMomentInput.Size = new System.Drawing.Size(100, 22);
+            this.ColumnUltimateMomentInput.TabIndex = 24;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(396, 58);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(165, 17);
+            this.label36.TabIndex = 23;
+            this.label36.Text = "Ultimate Moment (kips-ft)";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(396, 27);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(55, 17);
+            this.label35.TabIndex = 22;
+            this.label35.Text = "LOADS";
+            // 
             // inputClearCoverColumn
             // 
             this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 344);
@@ -736,6 +777,15 @@
             // rebarComboBoxColumn
             // 
             this.rebarComboBoxColumn.FormattingEnabled = true;
+            this.rebarComboBoxColumn.Items.AddRange(new object[] {
+            "No 2",
+            "No 3",
+            "No 4",
+            "No 5",
+            "No 7",
+            "No 8",
+            "No 9",
+            "No 10"});
             this.rebarComboBoxColumn.Location = new System.Drawing.Point(24, 142);
             this.rebarComboBoxColumn.Name = "rebarComboBoxColumn";
             this.rebarComboBoxColumn.Size = new System.Drawing.Size(121, 24);
@@ -783,47 +833,6 @@
             this.label23.Size = new System.Drawing.Size(76, 17);
             this.label23.TabIndex = 0;
             this.label23.Text = "MATERIAL";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(396, 27);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(55, 17);
-            this.label35.TabIndex = 22;
-            this.label35.Text = "LOADS";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(396, 58);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(165, 17);
-            this.label36.TabIndex = 23;
-            this.label36.Text = "Ultimate Moment (kips-ft)";
-            // 
-            // ColumnUltimateMomentInput
-            // 
-            this.ColumnUltimateMomentInput.Location = new System.Drawing.Point(399, 86);
-            this.ColumnUltimateMomentInput.Name = "ColumnUltimateMomentInput";
-            this.ColumnUltimateMomentInput.Size = new System.Drawing.Size(100, 22);
-            this.ColumnUltimateMomentInput.TabIndex = 24;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(396, 121);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(153, 17);
-            this.label37.TabIndex = 25;
-            this.label37.Text = "Ultimate Shear (kips-ft)";
-            // 
-            // ColumnUltimateShearInput
-            // 
-            this.ColumnUltimateShearInput.Location = new System.Drawing.Point(399, 144);
-            this.ColumnUltimateShearInput.Name = "ColumnUltimateShearInput";
-            this.ColumnUltimateShearInput.Size = new System.Drawing.Size(100, 22);
-            this.ColumnUltimateShearInput.TabIndex = 26;
             // 
             // Form1
             // 
