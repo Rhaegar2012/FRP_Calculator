@@ -23,6 +23,8 @@ namespace FRP_Calculator_V0._0
         string RebarSize;
         double UltimateMoment;
         double UltimateShear;
+        string BeamExposedCondition;
+        string BeamFiberType;
         private TextBox[] beaminputFields;
         //Column State variables 
         int Col_ConcreteStrength;
@@ -33,7 +35,9 @@ namespace FRP_Calculator_V0._0
         double FaceReinforcement;
         double SideReinforcement;
         double ColumnUltimateMoment;
-        double ColumnUltimateShear;
+        double ColumnUltimateAxial;
+        string ColumnExposedCondition;
+        string ColumnFiberType;
         private TextBox[] columninputFields;
         
     
@@ -58,7 +62,7 @@ namespace FRP_Calculator_V0._0
                                                inputColumnFaceReinforcement,
                                                inputColumnSideReinforcement,
                                                ColumnUltimateMomentInput,
-                                               ColumnUltimateShearInput};
+                                               ColumnUltimateAxialInput};
         }
         private void initializeBeam()
         {
@@ -72,9 +76,12 @@ namespace FRP_Calculator_V0._0
             StirrupSpacing = Int32.Parse(inputStirrupSpacing.Text);
             UltimateMoment = double.Parse(bendingMomentInput.Text);
             UltimateShear = double.Parse(shearForceInput.Text);
-
             RebarSize = rebarComboBox.Text;
-            currentBeam = new Beam(ConcreteStrength, BeamWidth, BeamHeight, ClearCover, BendingReinf, ShearReinf, StirrupSpacing,RebarSize,UltimateMoment,UltimateShear);
+            BeamExposedCondition = BeamExposureConditionInput.Text;
+            BeamFiberType = BeamRebarMaterialInput.Text;
+            currentBeam = new Beam(ConcreteStrength, BeamWidth, BeamHeight, 
+                ClearCover, BendingReinf, ShearReinf, StirrupSpacing,
+                RebarSize,UltimateMoment,UltimateShear,BeamExposedCondition,BeamFiberType);
            
         }
         private void initializeColumn()
@@ -85,8 +92,14 @@ namespace FRP_Calculator_V0._0
             Col_ClearCover = double.Parse(inputClearCoverColumn.Text);
             FaceReinforcement = double.Parse(inputColumnFaceReinforcement.Text);
             SideReinforcement = double.Parse(inputColumnSideReinforcement.Text);
+            ColumnUltimateMoment = double.Parse(ColumnUltimateMomentInput.Text);
+            ColumnUltimateAxial=double.Parse(ColumnUltimateAxialInput.Text);
+            ColumnExposedCondition = ColumnExposureConditionInput.Text;
+            ColumnFiberType = ColumnRebarMaterialInput.Text;
             Col_RebarSize = rebarComboBoxColumn.Text;
-            currentColumn = new Column(ColumnHeight, ColumnWidth, Col_ClearCover, FaceReinforcement, SideReinforcement, Col_ConcreteStrength,Col_RebarSize);
+            currentColumn = new Column(ColumnHeight, ColumnWidth, Col_ClearCover, FaceReinforcement, 
+                SideReinforcement, Col_ConcreteStrength,Col_RebarSize,ColumnExposedCondition,ColumnFiberType,
+                ColumnUltimateMoment,ColumnUltimateAxial);
 
         }
         private bool checkParameters()

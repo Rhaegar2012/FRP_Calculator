@@ -16,7 +16,12 @@ namespace FRP_Calculator_V0._0
         private double ConcreteGrossArea { get { return this.ColumnHeight * this.ColumnWidth; } }
         private double FaceReinforcement { get; set; }
         private double SideReinforcement { get; set; }
+        private double UltimateMoment { get; set; }
+        private double UltimateAxial { get; set; }
         private string rebarSize { get; set; }
+        private string ExposedCondition { get; set; }
+        private string FiberType { get; set; }
+        private double Ce { get { return AssignCe(ExposedCondition, FiberType); } }
         private double Ffu { get { return AssignFFu(rebarSize); } }
         private int ConcreteStrength { get; set; }
         private double SteelQuantity { get { return (this.FaceReinforcement + this.SideReinforcement) / (this.ConcreteGrossArea)*100; } }
@@ -27,6 +32,7 @@ namespace FRP_Calculator_V0._0
         private double W1 { get; set;  }
         private double BalancedPoint { get { return 1 / (1+this.e); } }
         private double EffectiveDepthCoverRatio { get{ return this.ClearCover / this.EffectiveDepth; } }
+        public double InteractionRatio;
         //Material Limit Variables 
         private double ConcreteEffectiveStrength { get { return this.ConcreteGrossArea * this.ConcreteStrength; } }
         private double F1 { get { return this.FaceReinforcement * (double)MOE.MOE; } }
@@ -59,7 +65,10 @@ namespace FRP_Calculator_V0._0
         private List<double> Phi_Pn = new List<double>();
 
         public int Ef { get; set; }
-        public Column(double ColumnHeight, double ColumnWidth, double ClearCover, double FaceReinforcement, double SideReinforcement,int ConcreteStrength, string rebarSize)
+        public Column(double ColumnHeight, double ColumnWidth, double ClearCover, 
+            double FaceReinforcement, double SideReinforcement,
+            int ConcreteStrength, string rebarSize,string ExposedCondition,
+            string FiberType,double UltimateMoment,double UltimateAxial)
         {
             this.ColumnHeight = ColumnHeight;
             this.ColumnWidth = ColumnWidth;
@@ -68,6 +77,10 @@ namespace FRP_Calculator_V0._0
             this.SideReinforcement = SideReinforcement;
             this.ConcreteStrength = ConcreteStrength;
             this.rebarSize = rebarSize;
+            this.ExposedCondition = ExposedCondition;
+            this.FiberType = FiberType;
+            this.UltimateMoment = UltimateMoment;
+            this.UltimateAxial = UltimateAxial;
         }
  
       
@@ -154,9 +167,13 @@ namespace FRP_Calculator_V0._0
         }
         public string CalculateInteractionRatio()
         {
-            //TODO
-            double interactionRatio=0.0;
-            return interactionRatio.ToString();
+
+            double ClosestMoment;
+            double ClosestAxial;
+            double distance;
+            //Checks if the load demand point is within the interaction curve
+
+            return InteractionRatio.ToString();
         }
 
 

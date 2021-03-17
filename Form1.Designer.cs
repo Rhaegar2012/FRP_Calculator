@@ -76,7 +76,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ColumnUltimateShearInput = new System.Windows.Forms.TextBox();
+            this.ColumnUltimateAxialInput = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.ColumnUltimateMomentInput = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -103,6 +103,16 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.ColumnExposureConditionInput = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.ColumnRebarMaterialInput = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.BeamExposureConditionInput = new System.Windows.Forms.ComboBox();
+            this.BeamRebarMaterialInput = new System.Windows.Forms.ComboBox();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -117,11 +127,16 @@
             this.modeTab.Location = new System.Drawing.Point(2, -2);
             this.modeTab.Name = "modeTab";
             this.modeTab.SelectedIndex = 0;
-            this.modeTab.Size = new System.Drawing.Size(892, 487);
+            this.modeTab.Size = new System.Drawing.Size(1070, 568);
             this.modeTab.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.BeamRebarMaterialInput);
+            this.tabPage1.Controls.Add(this.BeamExposureConditionInput);
+            this.tabPage1.Controls.Add(this.label44);
+            this.tabPage1.Controls.Add(this.label42);
+            this.tabPage1.Controls.Add(this.label41);
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.beamStirrupResults);
@@ -169,7 +184,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(884, 458);
+            this.tabPage1.Size = new System.Drawing.Size(1062, 539);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BEAM";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -320,7 +335,7 @@
             // 
             // generateBeamReport
             // 
-            this.generateBeamReport.Location = new System.Drawing.Point(154, 383);
+            this.generateBeamReport.Location = new System.Drawing.Point(154, 488);
             this.generateBeamReport.Name = "generateBeamReport";
             this.generateBeamReport.Size = new System.Drawing.Size(100, 42);
             this.generateBeamReport.TabIndex = 29;
@@ -329,7 +344,7 @@
             // 
             // checkBeamButton
             // 
-            this.checkBeamButton.Location = new System.Drawing.Point(48, 383);
+            this.checkBeamButton.Location = new System.Drawing.Point(48, 488);
             this.checkBeamButton.Name = "checkBeamButton";
             this.checkBeamButton.Size = new System.Drawing.Size(100, 42);
             this.checkBeamButton.TabIndex = 28;
@@ -367,7 +382,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(476, 241);
+            this.pictureBox2.Location = new System.Drawing.Point(570, 259);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(412, 233);
             this.pictureBox2.TabIndex = 25;
@@ -375,7 +390,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(661, 49);
+            this.pictureBox1.Location = new System.Drawing.Point(751, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 187);
             this.pictureBox1.TabIndex = 24;
@@ -383,7 +398,7 @@
             // 
             // shearForceInput
             // 
-            this.shearForceInput.Location = new System.Drawing.Point(240, 341);
+            this.shearForceInput.Location = new System.Drawing.Point(240, 397);
             this.shearForceInput.Name = "shearForceInput";
             this.shearForceInput.Size = new System.Drawing.Size(100, 22);
             this.shearForceInput.TabIndex = 23;
@@ -391,7 +406,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(238, 321);
+            this.label14.Location = new System.Drawing.Point(237, 377);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(133, 17);
             this.label14.TabIndex = 22;
@@ -400,7 +415,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(237, 268);
+            this.label13.Location = new System.Drawing.Point(237, 321);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(173, 17);
             this.label13.TabIndex = 21;
@@ -408,7 +423,7 @@
             // 
             // bendingMomentInput
             // 
-            this.bendingMomentInput.Location = new System.Drawing.Point(240, 288);
+            this.bendingMomentInput.Location = new System.Drawing.Point(240, 341);
             this.bendingMomentInput.Name = "bendingMomentInput";
             this.bendingMomentInput.Size = new System.Drawing.Size(100, 22);
             this.bendingMomentInput.TabIndex = 20;
@@ -416,7 +431,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(237, 242);
+            this.label12.Location = new System.Drawing.Point(241, 276);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(55, 17);
             this.label12.TabIndex = 19;
@@ -424,7 +439,7 @@
             // 
             // inputStirrupSpacing
             // 
-            this.inputStirrupSpacing.Location = new System.Drawing.Point(240, 197);
+            this.inputStirrupSpacing.Location = new System.Drawing.Point(240, 156);
             this.inputStirrupSpacing.Name = "inputStirrupSpacing";
             this.inputStirrupSpacing.Size = new System.Drawing.Size(100, 22);
             this.inputStirrupSpacing.TabIndex = 18;
@@ -432,7 +447,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(237, 170);
+            this.label11.Location = new System.Drawing.Point(237, 136);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(126, 17);
             this.label11.TabIndex = 17;
@@ -440,7 +455,7 @@
             // 
             // inputShearReinf
             // 
-            this.inputShearReinf.Location = new System.Drawing.Point(240, 127);
+            this.inputShearReinf.Location = new System.Drawing.Point(240, 111);
             this.inputShearReinf.Name = "inputShearReinf";
             this.inputShearReinf.Size = new System.Drawing.Size(100, 22);
             this.inputShearReinf.TabIndex = 16;
@@ -448,7 +463,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(237, 106);
+            this.label10.Location = new System.Drawing.Point(237, 91);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 17);
             this.label10.TabIndex = 15;
@@ -481,7 +496,7 @@
             // 
             // inputClearCover
             // 
-            this.inputClearCover.Location = new System.Drawing.Point(48, 341);
+            this.inputClearCover.Location = new System.Drawing.Point(48, 449);
             this.inputClearCover.Name = "inputClearCover";
             this.inputClearCover.Size = new System.Drawing.Size(100, 22);
             this.inputClearCover.TabIndex = 11;
@@ -489,7 +504,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 321);
+            this.label7.Location = new System.Drawing.Point(45, 429);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 17);
             this.label7.TabIndex = 10;
@@ -497,7 +512,7 @@
             // 
             // inputBeamHeight
             // 
-            this.inputBeamHeight.Location = new System.Drawing.Point(48, 288);
+            this.inputBeamHeight.Location = new System.Drawing.Point(48, 386);
             this.inputBeamHeight.Name = "inputBeamHeight";
             this.inputBeamHeight.Size = new System.Drawing.Size(100, 22);
             this.inputBeamHeight.TabIndex = 9;
@@ -505,7 +520,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 268);
+            this.label6.Location = new System.Drawing.Point(45, 366);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 17);
             this.label6.TabIndex = 8;
@@ -513,7 +528,7 @@
             // 
             // inputBeamWidth
             // 
-            this.inputBeamWidth.Location = new System.Drawing.Point(48, 237);
+            this.inputBeamWidth.Location = new System.Drawing.Point(48, 321);
             this.inputBeamWidth.Name = "inputBeamWidth";
             this.inputBeamWidth.Size = new System.Drawing.Size(100, 22);
             this.inputBeamWidth.TabIndex = 7;
@@ -521,7 +536,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 217);
+            this.label5.Location = new System.Drawing.Point(45, 293);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 17);
             this.label5.TabIndex = 6;
@@ -530,7 +545,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 182);
+            this.label4.Location = new System.Drawing.Point(6, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 17);
             this.label4.TabIndex = 5;
@@ -563,7 +578,12 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.ColumnUltimateShearInput);
+            this.tabPage2.Controls.Add(this.ColumnRebarMaterialInput);
+            this.tabPage2.Controls.Add(this.label40);
+            this.tabPage2.Controls.Add(this.label39);
+            this.tabPage2.Controls.Add(this.ColumnExposureConditionInput);
+            this.tabPage2.Controls.Add(this.label38);
+            this.tabPage2.Controls.Add(this.ColumnUltimateAxialInput);
             this.tabPage2.Controls.Add(this.label37);
             this.tabPage2.Controls.Add(this.ColumnUltimateMomentInput);
             this.tabPage2.Controls.Add(this.label36);
@@ -593,26 +613,26 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(884, 458);
+            this.tabPage2.Size = new System.Drawing.Size(1062, 539);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ColumnUltimateShearInput
+            // ColumnUltimateAxialInput
             // 
-            this.ColumnUltimateShearInput.Location = new System.Drawing.Point(399, 144);
-            this.ColumnUltimateShearInput.Name = "ColumnUltimateShearInput";
-            this.ColumnUltimateShearInput.Size = new System.Drawing.Size(100, 22);
-            this.ColumnUltimateShearInput.TabIndex = 26;
+            this.ColumnUltimateAxialInput.Location = new System.Drawing.Point(399, 144);
+            this.ColumnUltimateAxialInput.Name = "ColumnUltimateAxialInput";
+            this.ColumnUltimateAxialInput.Size = new System.Drawing.Size(100, 22);
+            this.ColumnUltimateAxialInput.TabIndex = 26;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(396, 121);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(153, 17);
+            this.label37.Size = new System.Drawing.Size(135, 17);
             this.label37.TabIndex = 25;
-            this.label37.Text = "Ultimate Shear (kips-ft)";
+            this.label37.Text = "Ultimate  Axial (kips)";
             // 
             // ColumnUltimateMomentInput
             // 
@@ -641,7 +661,7 @@
             // 
             // inputClearCoverColumn
             // 
-            this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 344);
+            this.inputClearCoverColumn.Location = new System.Drawing.Point(24, 420);
             this.inputClearCoverColumn.Name = "inputClearCoverColumn";
             this.inputClearCoverColumn.Size = new System.Drawing.Size(100, 22);
             this.inputClearCoverColumn.TabIndex = 21;
@@ -649,7 +669,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(21, 323);
+            this.label34.Location = new System.Drawing.Point(25, 400);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(82, 17);
             this.label34.TabIndex = 20;
@@ -657,7 +677,7 @@
             // 
             // generateColumnReportButton
             // 
-            this.generateColumnReportButton.Location = new System.Drawing.Point(151, 395);
+            this.generateColumnReportButton.Location = new System.Drawing.Point(148, 448);
             this.generateColumnReportButton.Name = "generateColumnReportButton";
             this.generateColumnReportButton.Size = new System.Drawing.Size(117, 44);
             this.generateColumnReportButton.TabIndex = 19;
@@ -666,7 +686,7 @@
             // 
             // checkColumnButton
             // 
-            this.checkColumnButton.Location = new System.Drawing.Point(28, 395);
+            this.checkColumnButton.Location = new System.Drawing.Point(25, 448);
             this.checkColumnButton.Name = "checkColumnButton";
             this.checkColumnButton.Size = new System.Drawing.Size(117, 44);
             this.checkColumnButton.TabIndex = 18;
@@ -677,7 +697,7 @@
             // interactionResult
             // 
             this.interactionResult.AutoSize = true;
-            this.interactionResult.Location = new System.Drawing.Point(340, 230);
+            this.interactionResult.Location = new System.Drawing.Point(340, 310);
             this.interactionResult.Name = "interactionResult";
             this.interactionResult.Size = new System.Drawing.Size(18, 17);
             this.interactionResult.TabIndex = 17;
@@ -686,7 +706,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(214, 230);
+            this.label33.Location = new System.Drawing.Point(214, 310);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(110, 17);
             this.label33.TabIndex = 16;
@@ -695,7 +715,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(214, 186);
+            this.label32.Location = new System.Drawing.Point(214, 279);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(72, 17);
             this.label32.TabIndex = 15;
@@ -711,7 +731,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(214, 121);
+            this.label31.Location = new System.Drawing.Point(211, 123);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(165, 17);
             this.label31.TabIndex = 13;
@@ -745,7 +765,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(25, 265);
+            this.label28.Location = new System.Drawing.Point(22, 355);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(97, 17);
             this.label28.TabIndex = 9;
@@ -754,7 +774,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(25, 207);
+            this.label27.Location = new System.Drawing.Point(25, 310);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(95, 17);
             this.label27.TabIndex = 8;
@@ -762,14 +782,14 @@
             // 
             // inputColumnHeight
             // 
-            this.inputColumnHeight.Location = new System.Drawing.Point(24, 285);
+            this.inputColumnHeight.Location = new System.Drawing.Point(24, 375);
             this.inputColumnHeight.Name = "inputColumnHeight";
             this.inputColumnHeight.Size = new System.Drawing.Size(100, 22);
             this.inputColumnHeight.TabIndex = 7;
             // 
             // inputColumnWidth
             // 
-            this.inputColumnWidth.Location = new System.Drawing.Point(25, 230);
+            this.inputColumnWidth.Location = new System.Drawing.Point(25, 330);
             this.inputColumnWidth.Name = "inputColumnWidth";
             this.inputColumnWidth.Size = new System.Drawing.Size(100, 22);
             this.inputColumnWidth.TabIndex = 6;
@@ -801,7 +821,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(22, 186);
+            this.label26.Location = new System.Drawing.Point(21, 279);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(156, 17);
             this.label26.TabIndex = 3;
@@ -834,11 +854,111 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "MATERIAL";
             // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(22, 178);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(145, 17);
+            this.label38.TabIndex = 27;
+            this.label38.Text = "COVER CONDITIONS";
+            // 
+            // ColumnExposureConditionInput
+            // 
+            this.ColumnExposureConditionInput.FormattingEnabled = true;
+            this.ColumnExposureConditionInput.Items.AddRange(new object[] {
+            "Not exposed to earth/weather",
+            "Exposed to earth/weather"});
+            this.ColumnExposureConditionInput.Location = new System.Drawing.Point(28, 220);
+            this.ColumnExposureConditionInput.Name = "ColumnExposureConditionInput";
+            this.ColumnExposureConditionInput.Size = new System.Drawing.Size(121, 24);
+            this.ColumnExposureConditionInput.TabIndex = 28;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(26, 200);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(137, 17);
+            this.label39.TabIndex = 29;
+            this.label39.Text = "Exposure Conditions";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(211, 200);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(76, 17);
+            this.label40.TabIndex = 30;
+            this.label40.Text = "Fiber Type";
+            // 
+            // ColumnRebarMaterialInput
+            // 
+            this.ColumnRebarMaterialInput.FormattingEnabled = true;
+            this.ColumnRebarMaterialInput.Items.AddRange(new object[] {
+            "Carbon",
+            "Glass",
+            "Aramid"});
+            this.ColumnRebarMaterialInput.Location = new System.Drawing.Point(214, 220);
+            this.ColumnRebarMaterialInput.Name = "ColumnRebarMaterialInput";
+            this.ColumnRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
+            this.ColumnRebarMaterialInput.TabIndex = 31;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(9, 170);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(136, 17);
+            this.label41.TabIndex = 46;
+            this.label41.Text = "COVER CONDITION";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(45, 197);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(130, 17);
+            this.label42.TabIndex = 47;
+            this.label42.Text = "Exposure Condition";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(240, 197);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(76, 17);
+            this.label44.TabIndex = 49;
+            this.label44.Text = "Fiber Type";
+            // 
+            // BeamExposureConditionInput
+            // 
+            this.BeamExposureConditionInput.FormattingEnabled = true;
+            this.BeamExposureConditionInput.Items.AddRange(new object[] {
+            "Not exposed to earth/water",
+            "Exposed to earth/water"});
+            this.BeamExposureConditionInput.Location = new System.Drawing.Point(48, 219);
+            this.BeamExposureConditionInput.Name = "BeamExposureConditionInput";
+            this.BeamExposureConditionInput.Size = new System.Drawing.Size(121, 24);
+            this.BeamExposureConditionInput.TabIndex = 50;
+            // 
+            // BeamRebarMaterialInput
+            // 
+            this.BeamRebarMaterialInput.FormattingEnabled = true;
+            this.BeamRebarMaterialInput.Items.AddRange(new object[] {
+            "Carbon",
+            "Glass",
+            "Arameid"});
+            this.BeamRebarMaterialInput.Location = new System.Drawing.Point(240, 217);
+            this.BeamRebarMaterialInput.Name = "BeamRebarMaterialInput";
+            this.BeamRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
+            this.BeamRebarMaterialInput.TabIndex = 51;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 484);
+            this.ClientSize = new System.Drawing.Size(1070, 565);
             this.Controls.Add(this.modeTab);
             this.Name = "Form1";
             this.Text = "FRP Calculator_V0.0";
@@ -924,11 +1044,21 @@
         private System.Windows.Forms.Button generateColumnReportButton;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox inputClearCoverColumn;
-        private System.Windows.Forms.TextBox ColumnUltimateShearInput;
+        private System.Windows.Forms.TextBox ColumnUltimateAxialInput;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox ColumnUltimateMomentInput;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ComboBox ColumnRebarMaterialInput;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox ColumnExposureConditionInput;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox BeamRebarMaterialInput;
+        private System.Windows.Forms.ComboBox BeamExposureConditionInput;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label42;
     }
 }
 

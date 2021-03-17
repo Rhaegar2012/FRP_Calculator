@@ -12,6 +12,9 @@ namespace FRP_Calculator_V0._0
         public int Fc { get; set; }
         public int Ef { get; set; }
         public string RebarSize { get; set; }
+        public string ExposedCondition { get; set; }
+        public string FiberType { get; set; }
+        private double Ce { get { return AssignCe(this.ExposedCondition, this.FiberType); } }
         public double Ffu { get { return AssignFFu(RebarSize); } }
         public int BeamWidth { get; set; }
         public int BeamHeight { get; set; }
@@ -29,7 +32,9 @@ namespace FRP_Calculator_V0._0
         private const double Phi_shear = 0.75;
       
         //Constructor
-        public Beam(int Fc, int BeamWidth,int BeamHeight, double ClearCover,double BendingReinf, double ShearReinf, int StirrupSpacing,string RebarSize,double UltimateMoment,double UltimateShear)
+        public Beam(int Fc, int BeamWidth,int BeamHeight, double ClearCover,
+            double BendingReinf, double ShearReinf, int StirrupSpacing,
+            string RebarSize,double UltimateMoment,double UltimateShear,string ExposedCondition,string FiberType)
         {
             this.Fc = Fc;
             this.Ef = (int)MOE.MOE;
@@ -42,6 +47,8 @@ namespace FRP_Calculator_V0._0
             this.RebarSize = RebarSize;
             this.UltimateMoment = UltimateMoment;
             this.UltimateShear = UltimateShear;
+            this.ExposedCondition = ExposedCondition;
+            this.FiberType = FiberType;
 
         }
 
