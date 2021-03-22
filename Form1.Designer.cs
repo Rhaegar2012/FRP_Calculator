@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.modeTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BeamRebarMaterialInput = new System.Windows.Forms.ComboBox();
+            this.BeamExposureConditionInput = new System.Windows.Forms.ComboBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.beamStirrupResults = new System.Windows.Forms.Label();
@@ -76,6 +81,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ColumnRebarMaterialInput = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.ColumnExposureConditionInput = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.ColumnUltimateAxialInput = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.ColumnUltimateMomentInput = new System.Windows.Forms.TextBox();
@@ -85,7 +95,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.generateColumnReportButton = new System.Windows.Forms.Button();
             this.checkColumnButton = new System.Windows.Forms.Button();
-            this.interactionResult = new System.Windows.Forms.Label();
+            this.interactionResultOutput = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.inputColumnSideReinforcement = new System.Windows.Forms.TextBox();
@@ -103,16 +113,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.ColumnExposureConditionInput = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.ColumnRebarMaterialInput = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.BeamExposureConditionInput = new System.Windows.Forms.ComboBox();
-            this.BeamRebarMaterialInput = new System.Windows.Forms.ComboBox();
             this.modeTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -125,6 +125,7 @@
             this.modeTab.Controls.Add(this.tabPage1);
             this.modeTab.Controls.Add(this.tabPage2);
             this.modeTab.Location = new System.Drawing.Point(2, -2);
+            this.modeTab.Multiline = true;
             this.modeTab.Name = "modeTab";
             this.modeTab.SelectedIndex = 0;
             this.modeTab.Size = new System.Drawing.Size(1070, 568);
@@ -188,6 +189,56 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "BEAM";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // BeamRebarMaterialInput
+            // 
+            this.BeamRebarMaterialInput.FormattingEnabled = true;
+            this.BeamRebarMaterialInput.Items.AddRange(new object[] {
+            "Carbon",
+            "Glass",
+            "Aramid"});
+            this.BeamRebarMaterialInput.Location = new System.Drawing.Point(240, 217);
+            this.BeamRebarMaterialInput.Name = "BeamRebarMaterialInput";
+            this.BeamRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
+            this.BeamRebarMaterialInput.TabIndex = 51;
+            // 
+            // BeamExposureConditionInput
+            // 
+            this.BeamExposureConditionInput.FormattingEnabled = true;
+            this.BeamExposureConditionInput.Items.AddRange(new object[] {
+            "Not exposed to earth/water",
+            "Exposed to earth/water"});
+            this.BeamExposureConditionInput.Location = new System.Drawing.Point(48, 219);
+            this.BeamExposureConditionInput.Name = "BeamExposureConditionInput";
+            this.BeamExposureConditionInput.Size = new System.Drawing.Size(186, 24);
+            this.BeamExposureConditionInput.TabIndex = 50;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(240, 197);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(76, 17);
+            this.label44.TabIndex = 49;
+            this.label44.Text = "Fiber Type";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(45, 197);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(130, 17);
+            this.label42.TabIndex = 47;
+            this.label42.Text = "Exposure Condition";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(9, 170);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(136, 17);
+            this.label41.TabIndex = 46;
+            this.label41.Text = "COVER CONDITION";
             // 
             // label22
             // 
@@ -592,7 +643,7 @@
             this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.generateColumnReportButton);
             this.tabPage2.Controls.Add(this.checkColumnButton);
-            this.tabPage2.Controls.Add(this.interactionResult);
+            this.tabPage2.Controls.Add(this.interactionResultOutput);
             this.tabPage2.Controls.Add(this.label33);
             this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.inputColumnSideReinforcement);
@@ -617,6 +668,56 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "COLUMN";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ColumnRebarMaterialInput
+            // 
+            this.ColumnRebarMaterialInput.FormattingEnabled = true;
+            this.ColumnRebarMaterialInput.Items.AddRange(new object[] {
+            "Carbon",
+            "Glass",
+            "Aramid"});
+            this.ColumnRebarMaterialInput.Location = new System.Drawing.Point(214, 220);
+            this.ColumnRebarMaterialInput.Name = "ColumnRebarMaterialInput";
+            this.ColumnRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
+            this.ColumnRebarMaterialInput.TabIndex = 31;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(211, 200);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(76, 17);
+            this.label40.TabIndex = 30;
+            this.label40.Text = "Fiber Type";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(26, 200);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(137, 17);
+            this.label39.TabIndex = 29;
+            this.label39.Text = "Exposure Conditions";
+            // 
+            // ColumnExposureConditionInput
+            // 
+            this.ColumnExposureConditionInput.FormattingEnabled = true;
+            this.ColumnExposureConditionInput.Items.AddRange(new object[] {
+            "Not exposed to earth/weather",
+            "Exposed to earth/weather"});
+            this.ColumnExposureConditionInput.Location = new System.Drawing.Point(28, 220);
+            this.ColumnExposureConditionInput.Name = "ColumnExposureConditionInput";
+            this.ColumnExposureConditionInput.Size = new System.Drawing.Size(180, 24);
+            this.ColumnExposureConditionInput.TabIndex = 28;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(22, 178);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(145, 17);
+            this.label38.TabIndex = 27;
+            this.label38.Text = "COVER CONDITIONS";
             // 
             // ColumnUltimateAxialInput
             // 
@@ -694,14 +795,14 @@
             this.checkColumnButton.UseVisualStyleBackColor = true;
             this.checkColumnButton.Click += new System.EventHandler(this.checkColumnButton_Click);
             // 
-            // interactionResult
+            // interactionResultOutput
             // 
-            this.interactionResult.AutoSize = true;
-            this.interactionResult.Location = new System.Drawing.Point(340, 310);
-            this.interactionResult.Name = "interactionResult";
-            this.interactionResult.Size = new System.Drawing.Size(18, 17);
-            this.interactionResult.TabIndex = 17;
-            this.interactionResult.Text = "\"\"";
+            this.interactionResultOutput.AutoSize = true;
+            this.interactionResultOutput.Location = new System.Drawing.Point(340, 310);
+            this.interactionResultOutput.Name = "interactionResultOutput";
+            this.interactionResultOutput.Size = new System.Drawing.Size(18, 17);
+            this.interactionResultOutput.TabIndex = 17;
+            this.interactionResultOutput.Text = "\"\"";
             // 
             // label33
             // 
@@ -854,106 +955,6 @@
             this.label23.TabIndex = 0;
             this.label23.Text = "MATERIAL";
             // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(22, 178);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(145, 17);
-            this.label38.TabIndex = 27;
-            this.label38.Text = "COVER CONDITIONS";
-            // 
-            // ColumnExposureConditionInput
-            // 
-            this.ColumnExposureConditionInput.FormattingEnabled = true;
-            this.ColumnExposureConditionInput.Items.AddRange(new object[] {
-            "Not exposed to earth/weather",
-            "Exposed to earth/weather"});
-            this.ColumnExposureConditionInput.Location = new System.Drawing.Point(28, 220);
-            this.ColumnExposureConditionInput.Name = "ColumnExposureConditionInput";
-            this.ColumnExposureConditionInput.Size = new System.Drawing.Size(121, 24);
-            this.ColumnExposureConditionInput.TabIndex = 28;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(26, 200);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(137, 17);
-            this.label39.TabIndex = 29;
-            this.label39.Text = "Exposure Conditions";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(211, 200);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(76, 17);
-            this.label40.TabIndex = 30;
-            this.label40.Text = "Fiber Type";
-            // 
-            // ColumnRebarMaterialInput
-            // 
-            this.ColumnRebarMaterialInput.FormattingEnabled = true;
-            this.ColumnRebarMaterialInput.Items.AddRange(new object[] {
-            "Carbon",
-            "Glass",
-            "Aramid"});
-            this.ColumnRebarMaterialInput.Location = new System.Drawing.Point(214, 220);
-            this.ColumnRebarMaterialInput.Name = "ColumnRebarMaterialInput";
-            this.ColumnRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
-            this.ColumnRebarMaterialInput.TabIndex = 31;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(9, 170);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(136, 17);
-            this.label41.TabIndex = 46;
-            this.label41.Text = "COVER CONDITION";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(45, 197);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(130, 17);
-            this.label42.TabIndex = 47;
-            this.label42.Text = "Exposure Condition";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(240, 197);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(76, 17);
-            this.label44.TabIndex = 49;
-            this.label44.Text = "Fiber Type";
-            // 
-            // BeamExposureConditionInput
-            // 
-            this.BeamExposureConditionInput.FormattingEnabled = true;
-            this.BeamExposureConditionInput.Items.AddRange(new object[] {
-            "Not exposed to earth/water",
-            "Exposed to earth/water"});
-            this.BeamExposureConditionInput.Location = new System.Drawing.Point(48, 219);
-            this.BeamExposureConditionInput.Name = "BeamExposureConditionInput";
-            this.BeamExposureConditionInput.Size = new System.Drawing.Size(121, 24);
-            this.BeamExposureConditionInput.TabIndex = 50;
-            // 
-            // BeamRebarMaterialInput
-            // 
-            this.BeamRebarMaterialInput.FormattingEnabled = true;
-            this.BeamRebarMaterialInput.Items.AddRange(new object[] {
-            "Carbon",
-            "Glass",
-            "Arameid"});
-            this.BeamRebarMaterialInput.Location = new System.Drawing.Point(240, 217);
-            this.BeamRebarMaterialInput.Name = "BeamRebarMaterialInput";
-            this.BeamRebarMaterialInput.Size = new System.Drawing.Size(121, 24);
-            this.BeamRebarMaterialInput.TabIndex = 51;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1029,7 +1030,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button checkColumnButton;
-        private System.Windows.Forms.Label interactionResult;
+        private System.Windows.Forms.Label interactionResultOutput;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox inputColumnSideReinforcement;

@@ -141,7 +141,7 @@ namespace FRP_Calculator_V0._0
             }
             if (currentColumn != null)
             {
-                interactionResult.Text = currentColumn.CalculateInteractionRatio();
+                interactionResultOutput.Text = currentColumn.CalculateInteractionRatio(ColumnUltimateMoment,ColumnUltimateAxial);
             }
            
         }
@@ -165,6 +165,7 @@ namespace FRP_Calculator_V0._0
                 initializeColumn();
                 currentColumn.GenerateInteractionTable();
                 currentColumn.ColumnDebug();
+                updateForm();
             }
         }
     }

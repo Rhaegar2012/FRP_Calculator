@@ -15,7 +15,7 @@ namespace FRP_Calculator_V0._0
         public string ExposedCondition { get; set; }
         public string FiberType { get; set; }
         private double Ce { get { return AssignCe(this.ExposedCondition, this.FiberType); } }
-        public double Ffu { get { return AssignFFu(RebarSize); } }
+        public double Ffu { get { return AssignFFu(RebarSize,this.ExposedCondition,this.FiberType); } }
         public int BeamWidth { get; set; }
         public int BeamHeight { get; set; }
         public double ClearCover { get; set; }
@@ -165,9 +165,9 @@ namespace FRP_Calculator_V0._0
         private double ModulusOfElasticityRatioTimesQuantity {
             get 
             {
-                Console.WriteLine("Concrete modulus of Elasticity" + ConcreteModulusOfElasticity);
-                Console.WriteLine("Modulus of Elasticity ratio" + ModulusOfElasticityRatio);
-                Console.WriteLine("Steel Quantity" + BendingSteelQuantity);
+                //Console.WriteLine("Concrete modulus of Elasticity" + ConcreteModulusOfElasticity);
+                //Console.WriteLine("Modulus of Elasticity ratio" + ModulusOfElasticityRatio);
+                //Console.WriteLine("Steel Quantity" + BendingSteelQuantity);
                 return ModulusOfElasticityRatio * BendingSteelQuantity;
             }
         }
@@ -228,7 +228,8 @@ namespace FRP_Calculator_V0._0
         }
         public void BeamBendingCalculations()
         {
-       
+
+            Console.WriteLine("Ce " + this.Ce + "Ffu " + this.Ffu);
            double MomentCapacity = (this.Fc * this.BeamWidth *Math.Pow( this.EffectiveDepth,2) * this.FRPReinforcementFinalRatio *
                 this.MomentLeveltoReinforcementRatio) / 12;
             NominalMoment =Math.Round( Phi_bending * MomentCapacity,2);

@@ -82,10 +82,12 @@ namespace FRP_Calculator_V0._0
                         
                 }
             }
+            Console.WriteLine("Ce " + Ce);
             return Ce;
         }
-        public double AssignFFu(string rebarSize)
+        public double AssignFFu(string rebarSize,string ExposureCondition, string FiberType)
         {
+            Ce = AssignCe(ExposureCondition, FiberType);
             double returnValue;
             switch (rebarSize)
             {

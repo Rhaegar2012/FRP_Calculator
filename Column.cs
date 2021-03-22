@@ -21,8 +21,8 @@ namespace FRP_Calculator_V0._0
         private string rebarSize { get; set; }
         private string ExposedCondition { get; set; }
         private string FiberType { get; set; }
-        private double Ce { get { return AssignCe(ExposedCondition, FiberType); } }
-        private double Ffu { get { return AssignFFu(rebarSize); } }
+        private double Ce { get { return AssignCe(this.ExposedCondition, this.FiberType); } }
+        private double Ffu { get { return AssignFFu(this.rebarSize,this.ExposedCondition,this.FiberType); } }
         private int ConcreteStrength { get; set; }
         private double SteelQuantity { get { return (this.FaceReinforcement + this.SideReinforcement) / (this.ConcreteGrossArea)*100; } }
         private double SteelConcreteCapacityRatio { get { return ((this.Ffu * this.SteelQuantity) / this.ConcreteStrength) / 100; } }
@@ -87,6 +87,7 @@ namespace FRP_Calculator_V0._0
         public void GenerateInteractionTable()
         {
             double neutralAxisLimit = ColumnHeight / EffectiveDepth;
+            Console.WriteLine("Ffu " + this.Ffu);
             Console.WriteLine("neutral axis " + neutralAxisLimit);
             Console.WriteLine("Balance point" + this.BalancedPoint);
             int index = 0;
@@ -165,15 +166,48 @@ namespace FRP_Calculator_V0._0
                     Phi_Pn[i]);
             }
         }
-        public string CalculateInteractionRatio()
+        private bool CheckColumnFailure(double MomentDemand, double AxialDemand)
         {
-
+            double Max_Moment = Phi_Mn.Max<double>();
+            double Max_Axial = Phi_Pn.Max<double>();
+            Console.WriteLine(Max_Moment + " Max Moment");
+            if (MomentDemand > Max_Moment || AxialDemand>Max_Axial ) 
+            {
+                return true;
+            }
+            return false;
+        }
+        public string CalculateInteractionRatio(double MomentDemand,double AxialDemand)
+        {
+            //TODO
             double ClosestMoment;
             double ClosestAxial;
-            double distance;
+            double min_distance=100000;
             //Checks if the load demand point is within the interaction curve
+            if (CheckColumnFailure(MomentDemand, AxialDemand))
+            {
+                return "Column failed for interaction stress";
+            }
+            else
+            {
+                for(int i = 0; i < Phi_Mn.Count; i++)
+                {
+                    double distance = Math.Sqrt(Math.Pow(MomentDemand - Phi_Mn[i], 2) +
+                        Math.Pow(AxialDemand + Phi_Pn[i], 2));
+                    if (distance < min_distance)
+                    {
+                        min_distance = distance;
+                        ClosestMoment = Phi_Mn[i];
+                        ClosestAxial = Phi_Pn[i];
+                        this.InteractionRatio = (ClosestMoment / MomentDemand);
 
-            return InteractionRatio.ToString();
+                    }
+                   
+                }
+                
+            }
+            Console.WriteLine(this.InteractionRatio + " Interaction Ratio");
+            return this.InteractionRatio.ToString();
         }
 
 
